@@ -1,0 +1,127 @@
+EUR Customer Portal V2 (EUR release .26)
+BLUE - Only for EUR | 	GREY - is also being requested in NAM page
+Add Ability to update the password - self service
+Ability to associate more than one client to an account - example 	m can
+access, both Pentland, Mitre, Endura and Berghaus through a single login, via dropdown,
+similar to the Admin view.
+Ability to see a consolidated view of all sub account data into a main client account.
+For example: G-Star Raw is the main account, but has multiple entities in Europe that are
+managed and invoiced separately. So G-Star Raw UK and G-Star Raw NL have their own
+account set up, but would need to be consolidated into one main account for governance.
+1) Dashboard
+user@pentland.co
+
+-- 1 of 8 --
+
+1. Ability to open the list of parcels in transit by clicking over the “in transit” volume OR a filter in
+the report with “delivered” and “in transit”
+2. Performance visual - based on SLA - Added without SLA
+a. Similar to Average Transit time” per country graph but a line with expected SLA
+b. Example:
+3. Percentage of on-time delivery
+a. Using Selected carrier and service
+b. Include dropdown for destination country
+c. Classify parcels by “On-time”: delivered within SLA or “Late”: delivered after SLA.
+d. Consider only parcels with “Delivered” scan and calculate based on first “customer a-scan”
+and first “customer stop clock” scan
+e.
+4. Volume distribution by weight (declared weight)
+a. Parcel with any scan (used label)
+b. Add a filter with requested service
+c. Aggregate weight in 10 ranges:
+i. 0-1kg, 1-2kg, 2-3kg, 3-5kg, 5-7kg, 7-10kg, 10-12kg, 12-15kg, 15-20kg, 20kg +.
+d. Bar chart with percentage of volume (number of parcels) for each weight bracket
+
+-- 2 of 8 --
+
+6. Average daily volume - weekly view - latest 8 weeks. Expand to see more weeks.
+a. Only show up to previous week (full week)
+b. Show data label
+2) Report
+1. Input several tracking numbers or order numbers at a time in the search bar (ideally just copy
+and paste different lines, or, separated by comma)
+2. Add billable weight - TBC where this is stored
+3. Add total amount billed at parcel level (only after billed)
+
+-- 3 of 8 --
+
+a. sum of base rate, fuel, and any other surcharge
+4. Add “Label to A-scan - Calendar days” column calculating the whole days, in calendar days,
+between the label created date and the first start the clock event in milestone.
+5. Add a “Shipment Status” column showing the latest “maersk tracking status group”. If blank
+from GTS, show the previous status available
+6. “Performance” - stating “Late”/ “on-time”, based on transit time being: above: Late; equal or
+below expected SLA: On-time
+7. “SLA” - SLA for each specific parcel - see excel 	EUR Delivery SLAs.xlsx
+8. When exporting, the file name must contain date and hour of the download (customer time)
+2.1) Report filters
+Search by tracking status
+Drop down and populate the tracking groups - If visually possible
+Add the “Shipment status” filter
+
+-- 4 of 8 --
+
+3) Tracking “Search Shipment”
+1. Search bar enabled also for Order number - Change to “Enter tracking/order number” -
+enable for both outbound and returns
+2. Add “shipment type” - Outbound or Return
+3. Search several parcel at a time. Paste different numbers in one single field.
+a. When searching several tracking numbers retrieve only - Maersk tracking number; Carrier
+tracking number; Label generated date; Ship date (a-scan) if empty, leave blank; Latest
+tracking event; Latest tracking event date; Recipient country code; Selected Carrier and
+Service;
+b. Provide expand button or link to view additional info (as per single parcel tracking view)
+4. “Select all” or only some labels and allow bulk download/save of labels
+5. Support button - at parcel level - open a pre-filled Support form - see Support form
+6. See and Download POD for Delivered parcels once feature is available
+7. Button to Re generate label - opens the Manual label creation tab with all details pre-filled as
+the selected label- customer can then re-issue the label or edit details before submitting it.
+8. Button to generate a Return label based on a Outbound label details. (Customer search for an
+outbound parcel and selects Create Return Label. the details are auto-filled with the same
+parcels details as outbound but reverse flow.
+FEDEX multi-
+parcel tracking.mp4
+
+-- 5 of 8 --
+
+4) Support Form
+Allow customer to submit an inquiry, at parcel level, sent directly to CX with parcel details.
+1. Pre-filled Support request form with:
+Shipper name
+
+-- 6 of 8 --
+
+Shipper address, incl country
+Shipper email and option to add additional email
+Date (today)
+Package details - all as listed in the header (i.e Add last mile carrier and injection hub as
+well for EUR)
+Query type - dropdown with few option
+Change delivery address (reroute)
+Tracking status update
+Delivery issue
+Service/SLA (late)
+Start a claim (lost/damaged)
+Label or documentation problem
+Other
+Empty text box for inquiry details (X max. characters)
+Ability to upload attachment (support JNP, PDF, excel, PNG, jpG,, word | Max file size: TBD
+2. When submitting, an email must be sent to Maersk CX team connected through SuperOffice,
+which then must send a case confirmation email to the customer
+a. Sends an email to
+b. Subject of the email formed by: Customer name | “Parcel Query” | “TN:” Maersk tracking
+number | Parcel destination country | Selected carrier name .
+i. example: Parcel4you P/S | Parcel Query | TN: 1MPURVVNA20037940610 | Germany |
+Colissimo
+3. Visibility to inquiry submitted (historical) (Out of scope for V2)
+4. Visibility over inquiry status (Out of scope for V2)
+5. Support form submitted status or "greyed out" button
+EDEU_CS@maersk.com
+
+-- 7 of 8 --
+
+5) Manual Label creation page
+see Manual Label page for Customer Portal V2
+
+-- 8 of 8 --
+

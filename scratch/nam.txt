@@ -1,0 +1,147 @@
+NAM Customer Portal V2 (NAM release .26)
+BLUE - Only for NAM 	| 	GREY - is also being requested in EUR page
+Add Ability to identify and filter out non- MEC parcels (Customers is using their own
+accounts.)
+Add Ability to update the password - self service
+Ability to associate more than one client to an account - example 	m can
+access, both Pentland, Mitre, Endura and Berghaus through a single login, via dropdown,
+similar to the Admin view.
+1) Dashboard
+1. Add filter for “Carrier” - requested carrier - Done
+2. Add filter for “Shipment type” to list outbound or return -Done
+3. Average Transit Time: Top 10 Carrier & Service based on volume. - WIP
+a. Change TT calculation to Business Days - as per attached rules
+user@pentland.co
+
+-- 1 of 8 --
+
+4. Average Transit Time per zone: Change TT calculation to Business Days - as per attached
+rules - WIP
+5. Replace the harmonization done to the carrier and service name which remove “_” and
+repeated carrier names by the sharepoint table already used for EUR - Done
+6. Ability to open the list of parcels in transit by clicking over the “in transit” volume OR a filter in
+the report with “delivered” and “in transit” - Done
+7. Add Graph for Volume distribution by weight (declared weight) -Done
+a. Parcel with any scan (used label)
+b. Aggregate weight in ranges: <1lb, 1 to 2lbs, 2 to 4lbs, 4 - 6lbs, 6-8lbs, 8-10lbs, 10-15lbs, 15-
+25lbs, 25- 50lbs, >50lbs.
+c. Bar chart with percentage of volume (number of parcels) for each weight bracket
+4. Add Graph with “On time deliveries” chart
+a. Using Requested carrier and service
+b. Classify parcels by “On-time”: delivered within SLA or “Late”: delivered after SLA. On-time:
+transit time TT_bus5_local, or TT_bus6_local as per each carrier rule, is equal or less that
+SLA. Late is greater than SLA.
+c. Consider only parcels with “Delivered” scan and calculate based on first “customer a-scan”
+and first “customer stop clock” scan
+
+-- 2 of 8 --
+
+d. example (at service level)
+5. Average daily volume - weekly view - latest 8 weeks. Expand to see more weeks. - Done
+a. Only show up to previous week (full week)
+b. Show data label
+2) Report
+1. Data show:
+a. Add Shipment type (Outbound or Return) - Done
+b. Add Closure date (local time)- First Closure event, based on milestone service, In Local
+Time (military format) - Done
+c. Add Declared Value - Done
+d. Add Currency - Declared value currency code - Done
+
+-- 3 of 8 --
+
+e. Add Receiver address ( “addressLine1” + “addressLine2”, comma separated) - Done
+f. Add Recipient email - Done
+g. Add Recipient phone number -Done
+h. Add “Label to A-scan - Calendar days” column calculating the whole days, in calendar
+days, between the label created date and the first start the clock event in milestone.
+i. Add a “Shipment Status” column showing the latest “maersk tracking status group”. If
+blank from GTS, show the previous status available
+j. Add billable weight - TBC where this is stored Done
+k. SLA at line level
+i. For re-selling stored here
+ii. For Maersk parcel - here. SLA at country level
+l. “Performance” - stating “Late”/ “on-time”, based on transit time being above: Late or equal
+or below (on-time) expected SLA
+m. Add total amount billed at parcel level (only after billed), available in Aurum.Done
+i. sum of base rate, fuel, and any other surcharge
+2. Input several tracking numbers or order numbers at a time in the search bar. (ideally just
+copy and past different lines, or, separated by comma) - not possible_its not out of box
+feature in PBI
+3. when exporting, the file name must contain date and hour of the download (customer time) -
+not possible_its not out of box feature in PBI
+2.1) Report filters
+3. User can filter (select and type in) the data based on:
+CarrierSLA1.xlsx
+
+-- 4 of 8 --
+
+a. Add Shipment type (Outbound or Return) - Done
+b. Add Origin Country - Done
+c. Search by tracking status - Drop down and populate the tracking groups - Done
+d. Add the “Shipment status” filter
+3) Tracking “Search Shipment”
+1. Search bar enabled also for Order number - Change to “Enter tracking/order number” -
+enable for both outbound and returns
+a. Tracking team dependency (ETA: April)
+2. Add “shipment type” - Outbound or Return
+3. Search several parcel at a time. Paste different numbers in one single field.
+a. When searching several tracking numbers retrieve only - Maersk tracking number; Carrier
+tracking number; Label generated date; Ship date (a-scan) if empty, leave blank; Tracking
+Status Group; Latest tracking event date; Recipient country code; Requested Carrier and
+Service;
+b. Provide expand button or link to view additional info (as per single parcel tracking view)
+4. “Select all” or only some labels and allow bulk download/save of labels
+5. Support button - at parcel level - open a pre-filled Support form - see Support form
+FEDEX multi-
+parcel tracking.mp4
+
+-- 5 of 8 --
+
+6. See and Download POD for Delivered parcels when available
+7. Button to Re generate label - opens the Manual label creation tab with all details pre-filled as
+the selected label- customer can then re-issue the label or edit details before submitting it.
+8. Button to generate a Return label based on a Outbound label details. (Customer search for an
+outbound parcel and selects Create Return Label. the details are auto-filled with the same
+parcels details as outbound but reverse flow.
+4) Support Form
+1. Allow customer to submit an inquiry, at parcel level, sent directly to CX with parcel details.
+2. Pre-filled Support request form with:
+Shipper name
+Shipper address
+Shipper email and option to add additional email
+Date (today)
+Package details - all as listed in the header
+Query type - dropdown with few option
+Change address/Intercept
+
+-- 6 of 8 --
+
+Tracking status request
+Claim initiation
+Other
+Empty text box for inquiry details (X max. characters)
+Ability to upload attachment (support JNP, PDF, excel, PNG, jpG,, word | Max file size: TBD
+3. When submitting, an email must be sent to Maersk CX team connected through Salesforce,
+which then must send a case confirmation email to the customer such as in screenshot.
+a. Email sent to CX team to create a ticket in salesforce. To
+i. Subject of the email formed by: Customer name | “Parcel Query” | “TN:” Maersk tracking
+number .
+ii. example: Parcel4you P/S | Parcel Query | TN: 1MPURVVNA20037940610
+4. Visibility to inquiry submitted (historical) (Out of scope for V2)
+5. Visibility over inquiry status (Out of scope for V2)
+6. Support form submitted status or "greyed out" button
+ed.cx.nam@maersk.com
+
+-- 7 of 8 --
+
+5) Manual Label creation page
+see
+6) Invoices page
+Add a option in the panel stating “Invoice Dashboard” which by clicking opens a new tab with
+aurum portal. Link:
+Manual Label page for Customer Portal V2
+visibleportal.visiblescm.com/Invoice
+
+-- 8 of 8 --
+

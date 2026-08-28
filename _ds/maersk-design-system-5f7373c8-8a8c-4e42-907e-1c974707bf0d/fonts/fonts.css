@@ -1,0 +1,72 @@
+@font-face{
+  font-family: "Maersk Text";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./MaerskText-Regular.woff2") format("woff2"),
+    url("./MaerskText-Regular.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Text";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./MaerskText-Medium.woff2") format("woff2"),
+    url("./MaerskText-Medium.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Text";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./MaerskText-Bold.woff2") format("woff2"),
+    url("./MaerskText-Bold.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Text";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./MaerskText-Italic.woff2") format("woff2"),
+    url("./MaerskText-Italic.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Text";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./MaerskText-MediumItalic.woff2") format("woff2"),
+    url("./MaerskText-MediumItalic.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Text";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./MaerskText-BoldItalic.woff2") format("woff2"),
+    url("./MaerskText-BoldItalic.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Headline";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./MaerskHeadline-Regular.woff2") format("woff2"),
+    url("./MaerskHeadline-Regular.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Headline";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./MaerskHeadline-Bold.woff2") format("woff2"),
+    url("./MaerskHeadline-Bold.woff") format("woff");
+}
+@font-face{
+  font-family: "Maersk Headline";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./MaerskHeadline-Light.woff2") format("woff2"),
+    url("./MaerskHeadline-Light.woff") format("woff");
+}

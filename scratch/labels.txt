@@ -1,0 +1,148 @@
+Manual labels page for Customer Portal V2
+Ensure internal users (warehouse staff) can also access the customer profile and create
+labels
+Ability to clearly identified the manual labels in reports and internal pages
+5) Manual Label creation page
+Allow Customers to create manual labels, for any service available for that specific customer,
+including outbound, returns, special VAS etc
+EUR - Parity to legacy portal where this feature is already available
+Number of manual labels created by ops team YTD. These requests are typically from CX and
+the warehouse teams depending on the need. They include both outbound and return labels.
+NAM: Main reason is for a return, when a client needs to return product that was delivered. From
+time to time we will have to create labels for warehouses if they have an urgent shipment that
+needs to go out and they are running into an error message or an IT issue with the order
+dropping in their system.
+Feb 	260
+Mar 	165
+Apr 	114
+May 	86
+Jun 	420
+Jul 	91
+Aug 	85
+Sep 	106
+Oct 	116
+Nov 	115
+Dec (until 14 dec) 	12
+2025 	Jan 	108
+
+-- 1 of 12 --
+
+Page requirements and competitors examples:
+1. Single Shipment with single Parcel creation - Required - R1
+2. Single shipment with Multi parcel Creation - R2 ?? depends on multi-parcel feature availability
+3. Batch shipment creation - Out of scope for V2
+4. Pick-ups management/requests - Out of scope for V2
+5. Select Shipment type - Outbound or return
+6. Select account - Out of scope
+2025 Total 	1678
+
+-- 2 of 12 --
+
+7. Ability to define Ship from profiles and Pre-fill the form with a default address - R2
+8. “Shipper” fields - fields should be dynamic according to country selected. * marks the
+mandatory fields:
+a. Shipper Name*
+b. Company Name
+c. Tax Id
+d. Email*
+e. Phone number* - pre-fill the country dialing code based on shipper country
+f. Country drop down*
+g. Address line 1*, 2, 3
+h. City*
+i. State* (mandatory only for some countries such as US and CA - logic must be applied)
+j. Zip-code*
+k. is residential address check
+
+-- 3 of 12 --
+
+9. “Receiver” fields
+a. Name*
+b. Company
+c. Tax ID/Personal ID
+d. Phone number* - pre-fill the country dialing code based on shipper country
+e. email*
+f. Country dropdown*
+g. Address line 1*, 2, 3
+h. City*
+i. State* (mandatory only for some countries - logic must be applied)
+
+-- 4 of 12 --
+
+j. Zip-code*
+k. is residential address check
+
+-- 5 of 12 --
+
+10. Address Validation:
+a. Country vs State vs Zip-code + Format - R1
+b. Address line (street) + auto-fill - Out of scope for V2
+11. Manage address book - Out of scope for V2
+12. Package details
+a. Only allow 1 package details R1
+b. Allow more packages to be listed. For each package customer must add the package
+details. Show sum the total shipment weight and total number of packages. Limit the
+number of packages according to the multi-carton feature. R2
+c. Weight* and Unit*(dropdown, pre-filled with lb or kg based on country)
+d. Length*, Width*, Hight* and unit(dropdown, pre-filled with in or cm based on country)
+
+-- 6 of 12 --
+
+e. Package Value and Currency (dropdown, default based on Shipper country) (optional)
+f. Check box, at package level, to inform whether it contains DGs or not. if checked,
+additional field should pop up and be mandatory - TBD according to DG initiative.
+When liability is checked (not yet available):
+
+-- 7 of 12 --
+
+13. Items details - pop-up and is mandatory if origin and destination are not the same country or
+are not within the EU
+a. SKU*
+b. Item description*
+c. quantity* (predefined in backend as “each”)
+d. Item Value* (itemsellingprice)
+e. Item currency*
+f. item net weight
+g. item net weight unit
+h. Item Country of origin*
+i. Destination HS code* - how many digits?
+
+-- 8 of 12 --
+
+j. Origin HS code - OUT of scope
+k. Incoterm*
+l. Transport charge - Out of scope
+m. Shipment purpose (default to commercial)
+14. shipmentUniqueIdentifier - Internally to be generated - clearly identifiable as manual
+label
+15. orderReference*
+16. Customs details for international leave to second release given complexity right after testing
+Domestic first
+15. Services available - Dropdown to select the desired service. Should be connected to prices
+uploaded. i.e if reselling USPS Home delivery rates are available, then that service should be
+available. If Fedex Next day air wasnʼt quoted, then it shouldnʼt be available as an option. Also
+connected to origin and destination country/tradelane, DG flag, COD etc
+
+-- 9 of 12 --
+
+16. For Returns, when Return Home collection is selected, show drop-down to select the
+collection date. R2
+
+-- 10 of 12 --
+
+17. Select Value Added services (once available) such as Signature on delivery, COD etc -
+Validate if customer has rates and the service is enabled. - to align with above features go
+live. R2
+18. Estimated Cost - out of scope
+
+-- 11 of 12 --
+
+19. Save draft to use later - R3
+20. Submit button
+21. Enable PDF and ZPL and PNG options to print and save
+22. Show success page, list Maersk Tracking number and underlying carrier TN generated
+23. Add Cancel label button for manually created labels
+24. Add void label option, with ability to multi-select, for labels created via API more than 2
+business days ago and not yet used (not for NAM)
+
+-- 12 of 12 --
+
